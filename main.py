@@ -1,6 +1,18 @@
-def print_hi(name):
-    print(f'Hello, {name}!')
+import PySimpleGUI as sg
 
+facesCount = 0
 
-if __name__ == '__main__':
-    print_hi('World')
+layout = [
+    [sg.Text("Faces tracked: {}".format(facesCount))]
+]
+
+window = sg.Window("", layout)
+
+while True:
+    (event, values) = window.read()
+
+    if event == sg.WIN_CLOSED:
+        break
+
+print("App closed!")
+window.close()
