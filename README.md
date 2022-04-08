@@ -12,3 +12,4 @@
 - [Python interface to Tcl/Tk](https://docs.python.org/3/library/tkinter.html)
 - [OpenCV](https://pypi.org/project/opencv-python/)
 - [PySimpleGUI](https://pysimplegui.readthedocs.io/en/latest/)
+- [OpenCV’s Haar cascades](https://github.com/opencv/opencv/tree/master/data/haarcascades)
