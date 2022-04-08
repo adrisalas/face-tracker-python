@@ -1,18 +1,31 @@
 import PySimpleGUI as sg
+import cv2
 
-facesCount = 0
+textFrame = 0
+webcamFrame = 1
 
-layout = [
-    [sg.Text("Faces tracked: {}".format(facesCount))]
-]
 
-window = sg.Window("", layout)
+def createWindow():
+    return sg.Window("", [
+        [sg.Text("Faces tracked: 0", key=textFrame)],
+        [sg.Image(key=webcamFrame)]
+    ])
 
-while True:
-    (event, values) = window.read()
 
-    if event == sg.WIN_CLOSED:
-        break
+if __name__ == '__main__':
+    window = createWindow()
+    video = cv2.VideoCapture()
 
-print("App closed!")
-window.close()
+    while True:
+        event, _ = window.read(timeout=0)
+        if event == sg.WIN_CLOSED:
+            break
+        else:
+            isCameraRead, image = video.read()
+            if isCameraRead:
+                window[textFrame].update("No webcam input detected!")
+            else:
+                window[textFrame].update("Webcam detected!")
+
+    print("App closed!")
+    window.close()
