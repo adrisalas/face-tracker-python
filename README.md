@@ -7,6 +7,10 @@
 - `source venv/bin/activate`
 - `pip install requirements.txt`
 
+## Example
+
+![](./example/example.png)
+
 ## Dependencies
 
 - [Python interface to Tcl/Tk](https://docs.python.org/3/library/tkinter.html)
